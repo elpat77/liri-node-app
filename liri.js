@@ -1,6 +1,6 @@
 var fs = require('fs');
 dotenv = require("dotenv").config();
-function spotifySearch(searchedSong) {
+function spotifySearch() {
     var Spotify = require('node-spotify-api');
     var keys = require("./keys");
     var spotify = new Spotify(keys.spotify);
@@ -9,20 +9,29 @@ function spotifySearch(searchedSong) {
     var Spotify = require('node-spotify-api');
 
     // search: function({ type: 'artist OR album OR track', query: 'My search query', limit: 20 }, callback);
-    var songName = process.argv[2];
-    if (searchedSong) {
-        songName = searchedSong;
-    } else if (!songName) {
-        songName = 'the sign';
+    var songName = []
+    for (let i = 2; i < process.argv.length; i++) {
+        songName.push(process.argv[i])
     }
-    spotify.search({ type: 'track', query: songName, limit: 7 }, function (err, data) {
+    var songInput = (songName.join('+'));
+    console.log(songInput);
+    // console.log(searchedSong);
+
+    // 
+    // this should warp the for statement
+    // if (songInput) {
+    //     songName = searchedSong;
+    // } else if (!songName) {
+    //     songName = 'the sign';
+    // }
+    spotify.search({ type: 'track', query: songInput, limit: 7 }, function (err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
         var songDetails = data.tracks.items[0];
         // console.log(songDetails);
-        var songSearched = (songName);
-        console.log("I am looking for", songSearched);
+        // var songSearched = (songInput);
+        console.log("I am looking for", songInput);
 
         var artist = (songDetails.artists[0].name);
         console.log("The Artist name is", artist);
@@ -39,7 +48,7 @@ function spotifySearch(searchedSong) {
         var songLink = (songDetails.external_urls.spotify)
         console.log("If a songs preview is available, it can be found here: ", songLink);
 
-        var searchResult = (songSearched + '\n' + artist + '\n' + album + '\n' + song + '\n' + previewLink + '\n' + songLink + '\n')
+        var searchResult = (songInput + '\n' + artist + '\n' + album + '\n' + song + '\n' + previewLink + '\n' + songLink + '\n')
         console.log(searchResult);
 
         fs.appendFile('log.txt', searchResult, function (err) {
