@@ -7,23 +7,22 @@ function spotifySearch() {
 
 
     var Spotify = require('node-spotify-api');
-
+    var songInput = '';
     // search: function({ type: 'artist OR album OR track', query: 'My search query', limit: 20 }, callback);
-    var songName = []
-    for (let i = 2; i < process.argv.length; i++) {
-        songName.push(process.argv[i])
-    }
-    var songInput = (songName.join('+'));
-    console.log(songInput);
-    // console.log(searchedSong);
 
-    // 
-    // this should warp the for statement
-    // if (songInput) {
-    //     songName = searchedSong;
-    // } else if (!songName) {
-    //     songName = 'the sign';
-    // }
+    //conditional to check if I have some parameters (process.argv[2] .....)
+    if (process.argv.length > 2) {
+        var songName = []
+
+        for (let i = 2; i < process.argv.length; i++) {
+            songName.push(process.argv[i])
+        }
+        songInput = (songName.join('+'));
+        console.log(songInput);
+
+    } else {
+        songInput = 'the+sign';
+    }
     spotify.search({ type: 'track', query: songInput, limit: 7 }, function (err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
