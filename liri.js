@@ -1,5 +1,43 @@
 var fs = require('fs');
 dotenv = require("dotenv").config();
+const axios = require("axios");
+
+
+function movieSearch() {
+    var movieTitle = require("./functions")
+    var movieUrl =
+        `http://www.omdbapi.com/?t=${movieTitle()}&y=&plot=short&apikey=trilogy`;
+
+    axios.get(movieUrl).then(res => {
+        var movieTitle = res.data.Title;
+        var movieYear = res.data.Year;
+        var movieIMDBRating = ("IMDB rating" + " " + res.data.Ratings[0].Value);
+        var movieCountry = (res.data.Country);
+        var movieLanguage = (res.data.Language);
+        var moviePlot = (res.data.Plot);
+        var movieActors = (res.data.Actors);
+
+        var movieSearchResult = (movieTitle + '\n' + movieYear + '\n' + movieIMDBRating + '\n' + movieCountry + '\n' + movieLanguage + '\n' + moviePlot + '\n' + movieActors + '\n');
+        console.log(movieSearchResult);
+        fs.appendFile('log.txt', movieSearchResult, function (err) {
+            if (err) {
+                return console.log(error);
+            }
+        })
+        // console.log(res.data);
+        // console.log(movieTitle);
+        // console.log(movieYear);
+        // console.log(movieIMDBRating);
+        // console.log(movieCountry);
+        // console.log(movieLanguage);
+        // console.log(moviePlot);
+        // console.log(movieActors);
+    });
+}
+movieSearch()
+
+
+
 function spotifySearch() {
     var Spotify = require('node-spotify-api');
     var keys = require("./keys");
@@ -28,18 +66,16 @@ function spotifySearch() {
             return console.log('Error occurred: ' + err);
         }
         var songDetails = data.tracks.items[0];
-        // console.log(songDetails);
-        // var songSearched = (songInput);
-        console.log("I am looking for", songInput);
+        // console.log("I am looking for", songInput);
 
         var artist = (songDetails.artists[0].name);
-        console.log("The Artist name is", artist);
+        // console.log("The Artist name is", artist);
 
         var album = (songDetails.album.name);
-        console.log("The album name is", album);
+        // console.log("The album name is", album);
 
         var song = (songDetails.name);
-        console.log("The songs name is", song);
+        // console.log("The songs name is", song);
 
         var previewLink = (songDetails.preview_url);
         console.log("If a songs preview is available, it can be found here: ", previewLink);
@@ -47,10 +83,10 @@ function spotifySearch() {
         var songLink = (songDetails.external_urls.spotify)
         console.log("If a songs preview is available, it can be found here: ", songLink);
 
-        var searchResult = (songInput + '\n' + artist + '\n' + album + '\n' + song + '\n' + previewLink + '\n' + songLink + '\n')
-        console.log(searchResult);
+        var songSearchResult = (songInput + '\n' + artist + '\n' + album + '\n' + song + '\n' + previewLink + '\n' + songLink + '\n');
+        console.log(songSearchResult);
 
-        fs.appendFile('log.txt', searchResult, function (err) {
+        fs.appendFile('log.txt', songSearchResult, function (err) {
             if (err) {
                 return console.log(error);
             }
