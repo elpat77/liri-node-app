@@ -21,7 +21,7 @@ After installing all of the above, you are set to go.
 In order to perform this search simply launch your Terminal or Command Line and type :
     `node liri.js spotify-this-song '<song name here>'`
 
-2. __Movie Search__ :movie_camera: - Search through the ***OMDB Database*** for information regarding any movie. The informatiomn you will get back is:
+2. __Movie Search__ :movie_camera: - Search through the ***OMDB Database*** for information regarding any movie. The information you will get back is:
 
     * Title of the movie.
     * Year the movie came out.

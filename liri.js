@@ -1,6 +1,8 @@
 var fs = require('fs');
 dotenv = require("dotenv").config();
 const axios = require("axios");
+console.log(process.argv[2]);
+var functionCalled = process.argv[2];
 
 
 function movieSearch() {
@@ -9,46 +11,31 @@ function movieSearch() {
         `http://www.omdbapi.com/?t=${movieTitle()}&y=&plot=short&apikey=trilogy`;
 
     axios.get(movieUrl).then(res => {
-        var movieTitle = res.data.Title;
-        var movieYear = res.data.Year;
-        var movieIMDBRating = ("IMDB rating" + " " + res.data.Ratings[0].Value);
-        var movieCountry = (res.data.Country);
-        var movieLanguage = (res.data.Language);
-        var moviePlot = (res.data.Plot);
-        var movieActors = (res.data.Actors);
+        var movieTitle = ("Movie Title -" + " " + res.data.Title);
+        var movieYear = ("Release Year -" + " " + res.data.Year);
+        var movieIMDBRating = ("IMDB Rating -" + " " + res.data.Ratings[0].Value);
+        var movieRottenRating = ("Rotten Tomatoes Rating -" + " " + res.data.Ratings[1].Value);
+        var movieCountry = ("Country of Origin -" + " " + res.data.Country);
+        var movieLanguage = ("Language(s) -" + " " + res.data.Language);
+        var moviePlot = ("Plot -" + " " + res.data.Plot);
+        var movieActors = ("Cast -" + " " + res.data.Actors);
 
-        var movieSearchResult = (movieTitle + '\n' + movieYear + '\n' + movieIMDBRating + '\n' + movieCountry + '\n' + movieLanguage + '\n' + moviePlot + '\n' + movieActors + '\n');
+        var movieSearchResult = (movieTitle + '\n' + movieYear + '\n' + movieIMDBRating + '\n' + movieRottenRating + '\n' + movieCountry + '\n' + movieLanguage + '\n' + moviePlot + '\n' + movieActors + '\n');
         console.log(movieSearchResult);
         fs.appendFile('log.txt', movieSearchResult, function (err) {
             if (err) {
                 return console.log(error);
             }
         })
-        // console.log(res.data);
-        // console.log(movieTitle);
-        // console.log(movieYear);
-        // console.log(movieIMDBRating);
-        // console.log(movieCountry);
-        // console.log(movieLanguage);
-        // console.log(moviePlot);
-        // console.log(movieActors);
     });
 }
-movieSearch()
-
-
 
 function spotifySearch() {
     var Spotify = require('node-spotify-api');
     var keys = require("./keys");
     var spotify = new Spotify(keys.spotify);
-
-
-    var Spotify = require('node-spotify-api');
     var songInput = '';
-    // search: function({ type: 'artist OR album OR track', query: 'My search query', limit: 20 }, callback);
 
-    //conditional to check if I have some parameters (process.argv[2] .....)
     if (process.argv.length > 2) {
         var songName = []
 
@@ -56,7 +43,7 @@ function spotifySearch() {
             songName.push(process.argv[i])
         }
         songInput = (songName.join('+'));
-        console.log(songInput);
+        // console.log(songInput);
 
     } else {
         songInput = 'the+sign';
@@ -66,16 +53,13 @@ function spotifySearch() {
             return console.log('Error occurred: ' + err);
         }
         var songDetails = data.tracks.items[0];
-        // console.log("I am looking for", songInput);
 
         var artist = (songDetails.artists[0].name);
-        // console.log("The Artist name is", artist);
 
         var album = (songDetails.album.name);
-        // console.log("The album name is", album);
 
         var song = (songDetails.name);
-        // console.log("The songs name is", song);
+
 
         var previewLink = (songDetails.preview_url);
         console.log("If a songs preview is available, it can be found here: ", previewLink);
@@ -84,7 +68,7 @@ function spotifySearch() {
         console.log("If a songs preview is available, it can be found here: ", songLink);
 
         var songSearchResult = (songInput + '\n' + artist + '\n' + album + '\n' + song + '\n' + previewLink + '\n' + songLink + '\n');
-        console.log(songSearchResult);
+        // console.log(songSearchResult);
 
         fs.appendFile('log.txt', songSearchResult, function (err) {
             if (err) {
@@ -94,4 +78,11 @@ function spotifySearch() {
 
     });
 }
-spotifySearch()
+
+
+if (functionCalled === 'movie-this') {
+    movieSearch();
+}
+else if (functionCalled === 'spotify-this-song') {
+    spotifySearch();
+}
