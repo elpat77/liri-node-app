@@ -11,7 +11,7 @@ In order for the app to work, clone this repo. Then install npm with it's depend
 
 After installing all of the above, you are set to go.
 
-1. __Song Search__ :musical_note: - Search through the Spotify Database for a specific song. The information you will get back is:
+1. __Song Search__ :musical_note: - Search through the ***Spotify Database*** for a specific song. The information you will get back is:
      * Artist(s) name
      * The song's name
      * The album that the song is from
@@ -21,7 +21,7 @@ After installing all of the above, you are set to go.
 In order to perform this search simply launch your Terminal or Command Line and type :
     `node liri.js spotify-this-song '<song name here>'`
 
-2. __Movie Search__ :movie_camera: - Search through the OMDB database for information regarding any movie. The informatiomn you will get back is:
+2. __Movie Search__ :movie_camera: - Search through the ***OMDB Database*** for information regarding any movie. The informatiomn you will get back is:
 
     * Title of the movie.
     * Year the movie came out.
@@ -36,7 +36,7 @@ In order to perform this search simply launch your Terminal or Command Line and 
     `node liri.js movie-this '<movie name here>'`
 
 
-3. __Concert Search__ :microphone: - Search through the Bands in Town Artist Events database for information regarding futiure events of your favorite artists. The information you will get is:
+3. __Concert Search__ :microphone: - Search through the ***Bands in Town Artist Events Database*** for information regarding futiure events of your favorite artists. The information you will get is:
      * Name of the artist
      * Name of the venue
      * Venue location
