@@ -1,14 +1,12 @@
-# liri-node-app
-
-**Welcome to Liri-Bot!**
+# Welcome to Liri-Bot!
 
 LIRI is like iPhone's SIRI. However, while SIRI is a Speech Interpretation and Recognition Interface, *LIRI is a Language Interpretation and Recognition Interfaces* . LIRI will be a command line node app that takes in parameters and gives you back data.
 
 In order for the app to work, clone this repo. Then install npm with it's dependencies by entering the following commands in Terminal:  
-**npm install**
-**npm init -y**
-**npm install --save node-spotify-api**
-**npm install omdb**
+- **npm install** <br>
+- **npm init -y** <br>
+- **npm install --save node-spotify-api** <br>
+- **npm install omdb**
 
 
 After installing all of the above, you are set to go.
