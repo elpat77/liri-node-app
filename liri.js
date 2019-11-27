@@ -4,6 +4,26 @@ const axios = require("axios");
 var functionCalled = process.argv[2];
 
 
+function concertSearch() {
+    // var concertURL =  'https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp';
+    var concertURL = `https://rest.bandsintown.com/artists/celine+dion/events?app_id=codingbootcamp`;
+    axios.get(concertURL).then(res => {
+        // console.log(res.data)
+        // console.log(res.data[0])
+        console.log(res.data[0].artist.name);
+        var artistName = ("Artist -" + " " + res.data[0].artist.name);
+        console.log(artistName);
+        var venueName = ("Venue(s) -" + " " + res.data[0].venue.name);
+        console.log(venueName);
+        var venueLocation = ("Location -" + " " + res.data[0].venue.country + ", " + res.data[0].venue.city + ", " + res.data[0].venue.region);
+        console.log(venueLocation);
+        var eventdate = ("Date -" + " " + res.data[0].datetime);
+        console.log(eventdate);
+    });
+}
+// concertSearch()
+
+
 function movieSearch() {
     var movieTitle = require("./movieFunct");
     var movieUrl =
@@ -30,8 +50,6 @@ function movieSearch() {
 }
 
 function spotifySearch() {
-    // var spotifyTitle = require("./songFunct");
-    // console.log("title", spotifyTitle);
     var Spotify = require('node-spotify-api');
     var keys = require("./keys");
     var spotify = new Spotify(keys.spotify);
@@ -78,4 +96,7 @@ if (functionCalled === 'movie-this') {
 }
 else if (functionCalled === 'spotify-this-song') {
     spotifySearch();
+}
+else if (functionCalled === 'concert-this') {
+    concertSearch();
 }

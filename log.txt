@@ -43,3 +43,9 @@ Artist Name -  Metallica
 Album Name -  Kill 'Em All (Remastered)
 If a songs preview is available, it can be found here:  https://p.scdn.co/mp3-preview/e9ef20abd055305ca0d5ad6e1aa3f6db115ad679?cid=7404de42acfd4831ad95855f1cd08550
 A link to the song can be found here: https://open.spotify.com/track/4YPgTCGJWAlHQ5g6eWoM8r
+
+Song Name -  Sad But True
+Artist Name -  Metallica
+Album Name -  Metallica
+If a songs preview is available, it can be found here:  https://p.scdn.co/mp3-preview/577a4a4762be905cc26096d90e0e4663fafc2ec0?cid=7404de42acfd4831ad95855f1cd08550
+A link to the song can be found here: https://open.spotify.com/track/1Ug98CRiQYu7wiSym4uLY4
