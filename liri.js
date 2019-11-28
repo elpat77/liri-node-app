@@ -2,27 +2,27 @@ var fs = require('fs');
 dotenv = require("dotenv").config();
 const axios = require("axios");
 var functionCalled = process.argv[2];
+var moment = require('moment');
 
 
 function concertSearch() {
+    var concertTitle = require("./concertFunct");
     // var concertURL =  'https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp';
-    var concertURL = `https://rest.bandsintown.com/artists/celine+dion/events?app_id=codingbootcamp`;
+    var concertURL = `https://rest.bandsintown.com/artists/${concertTitle()}/events?app_id=codingbootcamp`;
     axios.get(concertURL).then(res => {
-        // console.log(res.data)
-        // console.log(res.data[0])
-        console.log(res.data[0].artist.name);
-        var artistName = ("Artist -" + " " + res.data[0].artist.name);
-        console.log(artistName);
-        var venueName = ("Venue(s) -" + " " + res.data[0].venue.name);
-        console.log(venueName);
-        var venueLocation = ("Location -" + " " + res.data[0].venue.country + ", " + res.data[0].venue.city + ", " + res.data[0].venue.region);
-        console.log(venueLocation);
-        var eventdate = ("Date -" + " " + res.data[0].datetime);
-        console.log(eventdate);
+        var artistName = (res.data[0].artist.name);
+        var venueName = (res.data[0].venue.name);
+        var venueLocation = (res.data[0].venue.country + ", " + res.data[0].venue.city + " " + res.data[0].venue.region);
+        var eventDate = (res.data[0].datetime);
+        var eventSearchResult = ('\nArtist: ' + artistName + '\nVenue: ' + venueName + '\nLocation: ' + venueLocation + '\nDate: ' + moment(eventDate).format('MMMM Do YYYY') + `\n`);
+        console.log(eventSearchResult);
+        fs.appendFile('log.txt', eventSearchResult, function (err) {
+            if (err) {
+                return console.log(error);
+            }
+        })
     });
 }
-// concertSearch()
-
 
 function movieSearch() {
     var movieTitle = require("./movieFunct");
@@ -30,16 +30,16 @@ function movieSearch() {
         `http://www.omdbapi.com/?t=${movieTitle()}&y=&plot=short&apikey=trilogy`;
 
     axios.get(movieUrl).then(res => {
-        var movieTitle = ("Movie Title -" + " " + res.data.Title);
-        var movieYear = ("Release Year -" + " " + res.data.Year);
-        var movieIMDBRating = ("IMDB Rating -" + " " + res.data.Ratings[0].Value);
-        var movieRottenRating = ("Rotten Tomatoes Rating -" + " " + res.data.Ratings[1].Value);
-        var movieCountry = ("Country of Origin -" + " " + res.data.Country);
-        var movieLanguage = ("Language(s) -" + " " + res.data.Language);
-        var moviePlot = ("Plot -" + " " + res.data.Plot);
-        var movieActors = ("Cast -" + " " + res.data.Actors);
+        var movieTitle = (res.data.Title);
+        var movieYear = (res.data.Year);
+        var movieIMDBRating = (res.data.Ratings[0].Value);
+        var movieRottenRating = (res.data.Ratings[1].Value);
+        var movieCountry = (res.data.Country);
+        var movieLanguage = (res.data.Language);
+        var moviePlot = (res.data.Plot);
+        var movieActors = (res.data.Actors);
 
-        var movieSearchResult = ('\n' + movieTitle + '\n' + movieYear + '\n' + movieIMDBRating + '\n' + movieRottenRating + '\n' + movieCountry + '\n' + movieLanguage + '\n' + moviePlot + '\n' + movieActors + '\n');
+        var movieSearchResult = ('\nMovie Title: ' + movieTitle + '\nRelease Year: ' + movieYear + '\nIMDB Rating: ' + movieIMDBRating + '\nRotten Tomatoes Rating: ' + movieRottenRating + '\nCountry of Origin: ' + movieCountry + '\nLanguage(s): ' + movieLanguage + '\nPlot: ' + moviePlot + '\nCast: ' + movieActors + '\n');
         console.log(movieSearchResult);
         fs.appendFile('log.txt', movieSearchResult, function (err) {
             if (err) {
@@ -48,6 +48,19 @@ function movieSearch() {
         })
     });
 }
+
+function doWhatItSays() {
+    fs.readFile('random.txt', 'utf8', (err, data) => {
+        console.log(data);
+        var dataInput = data;
+        var DWIS = dataInput.split(',');
+        console.log(DWIS);
+
+        if (err) {
+            return console.log(error);
+        }
+    })
+};
 
 function spotifySearch() {
     var Spotify = require('node-spotify-api');
@@ -74,12 +87,12 @@ function spotifySearch() {
         }
         var songDetails = data.tracks.items[0];
         // console.log(songDetails);
-        var song = ("Song Name - " + " " + songDetails.name);
-        var artist = ("Artist Name - " + " " + songDetails.artists[0].name);
-        var album = ("Album Name - " + " " + songDetails.album.name);
-        var previewLink = ("If a songs preview is available, it can be found here: " + " " + songDetails.preview_url);
-        var songLink = ("A link to the song can be found here:" + " " + songDetails.external_urls.spotify)
-        var songSearchResult = ('\n' + song + '\n' + artist + '\n' + album + '\n' + previewLink + '\n' + songLink + '\n');
+        var song = (songDetails.name);
+        var artist = (songDetails.artists[0].name);
+        var album = (songDetails.album.name);
+        var previewLink = (songDetails.preview_url);
+        var songLink = (songDetails.external_urls.spotify)
+        var songSearchResult = ('\nSong Name: ' + song + '\nArtist Name: ' + artist + '\nAlbum Name: ' + album + '\nSong Preview: ' + previewLink + '\nLink to the song: ' + songLink + '\n');
         console.log(songSearchResult);
 
         fs.appendFile('log.txt', songSearchResult, function (err) {
@@ -87,7 +100,6 @@ function spotifySearch() {
                 return console.log(error);
             }
         })
-
     });
 }
 
@@ -99,4 +111,7 @@ else if (functionCalled === 'spotify-this-song') {
 }
 else if (functionCalled === 'concert-this') {
     concertSearch();
+}
+else if (functionCalled === 'do-what-it-says') {
+    doWhatItSays();
 }

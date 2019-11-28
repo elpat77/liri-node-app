@@ -49,3 +49,29 @@ Artist Name -  Metallica
 Album Name -  Metallica
 If a songs preview is available, it can be found here:  https://p.scdn.co/mp3-preview/577a4a4762be905cc26096d90e0e4663fafc2ec0?cid=7404de42acfd4831ad95855f1cd08550
 A link to the song can be found here: https://open.spotify.com/track/1Ug98CRiQYu7wiSym4uLY4
+
+Artist: Metallica
+Venue: Estadio Nacional Julio Martínez Prádanos
+Location: Chile, Ñuñoa 
+Date: April 15th 2020
+
+Movie Title: JFK
+Release Year: 1991
+IMDB Rating: 8.0/10
+Rotten Tomatoes Rating: 84%
+Country of Origin: France, USA
+Language(s): English, Spanish
+Plot: New Orleans District Attorney Jim Garrison discovers there's more to the Kennedy assassination than the official story.
+Cast: Sally Kirkland, Anthony Ramirez, Ray LePere, Steve Reed
+
+Song Name: One Thing Right
+Artist Name: Marshmello
+Album Name: One Thing Right
+If a songs preview is available, it can be found here: https://p.scdn.co/mp3-preview/86a860d6266e657a2a47b7c2266a9a98c1ba564d?cid=7404de42acfd4831ad95855f1cd08550
+A link to the song can be found here: https://open.spotify.com/track/4hPpVbbakQNv8YTHYaOJP4
+
+Song Name: Battery (Remastered)
+Artist Name: Metallica
+Album Name: Master of Puppets (Remastered Deluxe Box Set)
+Song Preview: https://p.scdn.co/mp3-preview/dede9ca058199437088f4bd123996ba5ca3c5870?cid=7404de42acfd4831ad95855f1cd08550
+Link to the song: https://open.spotify.com/track/7wz8LNfmGZ3C0PwKW9LdDg
