@@ -1,77 +1,41 @@
 
-Movie Title - The Matrix
-Release Year - 1999
-IMDB Rating - 8.7/10
-Rotten Tomatoes Rating - 88%
-Country of Origin - USA
-Language(s) - English
-Plot - A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.
-Cast - Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving
 
-Movie Title - The Matrix
-Release Year - 1999
-IMDB Rating - 8.7/10
-Rotten Tomatoes Rating - 88%
-Country of Origin - USA
-Language(s) - English
-Plot - A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.
-Cast - Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving
-
-Movie Title - The Good, the Bad and the Ugly
-Release Year - 1966
-IMDB Rating - 8.8/10
-Rotten Tomatoes Rating - 97%
-Country of Origin - Italy, Spain, West Germany
-Language(s) - Italian, English, Spanish
-Plot - A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.
-Cast - Eli Wallach, Clint Eastwood, Lee Van Cleef, Aldo Giuffrè
-
-Artist Name -  Metallica
-Album Name -  Metallica
-Song Name -  Enter Sandman
-If a songs preview is available, it can be found here:  https://p.scdn.co/mp3-preview/1ee9f1b0c3e3b327dd49ebc6dd64266b01adb96a?cid=7404de42acfd4831ad95855f1cd08550
-A link to the song can be found here: https://open.spotify.com/track/5BIMPccDwShpXq784RJlJp
-
-Song Name -  The Four Horseman
-Artist Name -  Judas Priest
-Album Name -  Nostradamus
-If a songs preview is available, it can be found here:  https://p.scdn.co/mp3-preview/43f0dc5c1a04e31c410cc13fc7a85b14468f742a?cid=7404de42acfd4831ad95855f1cd08550
-A link to the song can be found here: https://open.spotify.com/track/0uEc339zwvwzxM6p2QetcD
-
-Song Name -  The Four Horsemen (Remastered)
-Artist Name -  Metallica
-Album Name -  Kill 'Em All (Remastered)
-If a songs preview is available, it can be found here:  https://p.scdn.co/mp3-preview/e9ef20abd055305ca0d5ad6e1aa3f6db115ad679?cid=7404de42acfd4831ad95855f1cd08550
-A link to the song can be found here: https://open.spotify.com/track/4YPgTCGJWAlHQ5g6eWoM8r
-
-Song Name -  Sad But True
-Artist Name -  Metallica
-Album Name -  Metallica
-If a songs preview is available, it can be found here:  https://p.scdn.co/mp3-preview/577a4a4762be905cc26096d90e0e4663fafc2ec0?cid=7404de42acfd4831ad95855f1cd08550
-A link to the song can be found here: https://open.spotify.com/track/1Ug98CRiQYu7wiSym4uLY4
+Artist: Foo Fighters
+Venue: Intersect
+Location: United States, Las Vegas NV
+Date: December 7th 2019
 
 Artist: Metallica
 Venue: Estadio Nacional Julio Martínez Prádanos
 Location: Chile, Ñuñoa 
 Date: April 15th 2020
 
-Movie Title: JFK
-Release Year: 1991
-IMDB Rating: 8.0/10
-Rotten Tomatoes Rating: 84%
-Country of Origin: France, USA
-Language(s): English, Spanish
-Plot: New Orleans District Attorney Jim Garrison discovers there's more to the Kennedy assassination than the official story.
-Cast: Sally Kirkland, Anthony Ramirez, Ray LePere, Steve Reed
+Movie Title: The Good, the Bad and the Ugly
+Release Year: 1966
+IMDB Rating: 8.8/10
+Rotten Tomatoes Rating: 97%
+Country of Origin: Italy, Spain, West Germany
+Language(s): Italian, English, Spanish
+Plot: A bounty hunting scam joins two men in an uneasy alliance against a third in a race to find a fortune in gold buried in a remote cemetery.
+Cast: Eli Wallach, Clint Eastwood, Lee Van Cleef, Aldo Giuffrè
 
-Song Name: One Thing Right
-Artist Name: Marshmello
-Album Name: One Thing Right
-If a songs preview is available, it can be found here: https://p.scdn.co/mp3-preview/86a860d6266e657a2a47b7c2266a9a98c1ba564d?cid=7404de42acfd4831ad95855f1cd08550
-A link to the song can be found here: https://open.spotify.com/track/4hPpVbbakQNv8YTHYaOJP4
+Movie Title: The Matrix
+Release Year: 1999
+IMDB Rating: 8.7/10
+Rotten Tomatoes Rating: 88%
+Country of Origin: USA
+Language(s): English
+Plot: A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers.
+Cast: Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss, Hugo Weaving
 
-Song Name: Battery (Remastered)
+Song Name: Everlong
+Artist Name: Foo Fighters
+Album Name: The Colour And The Shape
+Song Preview: https://p.scdn.co/mp3-preview/4a2dc307a71393a695d69b16407cd73e1e234941?cid=7404de42acfd4831ad95855f1cd08550
+Link to the song: https://open.spotify.com/track/5UWwZ5lm5PKu6eKsHAGxOk
+
+Song Name: The Unforgiven
 Artist Name: Metallica
-Album Name: Master of Puppets (Remastered Deluxe Box Set)
-Song Preview: https://p.scdn.co/mp3-preview/dede9ca058199437088f4bd123996ba5ca3c5870?cid=7404de42acfd4831ad95855f1cd08550
-Link to the song: https://open.spotify.com/track/7wz8LNfmGZ3C0PwKW9LdDg
+Album Name: Metallica
+Song Preview: https://p.scdn.co/mp3-preview/61856ca038cf3825d383532f474dd6f7c8d54463?cid=7404de42acfd4831ad95855f1cd08550
+Link to the song: https://open.spotify.com/track/2lF8jQFhIjpmQa501sYXxR

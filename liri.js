@@ -10,6 +10,7 @@ function concertSearch() {
     // var concertURL =  'https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp';
     var concertURL = `https://rest.bandsintown.com/artists/${concertTitle()}/events?app_id=codingbootcamp`;
     axios.get(concertURL).then(res => {
+        // console.log(res);
         var artistName = (res.data[0].artist.name);
         var venueName = (res.data[0].venue.name);
         var venueLocation = (res.data[0].venue.country + ", " + res.data[0].venue.city + " " + res.data[0].venue.region);

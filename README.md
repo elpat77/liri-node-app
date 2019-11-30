@@ -45,3 +45,8 @@ In order to perform this search simply launch your Terminal or Command Line and 
 In order to perform this search simply launch your Terminal or Command Line and type :
     `node liri.js concert-this <artist/band name here>`
 
+
+[A preview of the program can be seen here:](../Preview.webm)
+
+
+
