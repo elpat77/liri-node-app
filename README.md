@@ -46,6 +46,8 @@ In order to perform this search simply launch your Terminal or Command Line and 
     `node liri.js concert-this <artist/band name here>`
 
 
+# The search results will be written on the log.txt file. 
+
 [A preview of the program can be seen by clicking on this link](./Preview.webm)
 
 

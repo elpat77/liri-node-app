@@ -1,9 +1,10 @@
-var fs = require('fs');
 dotenv = require("dotenv").config();
+
+var fs = require('fs');
 const axios = require("axios");
 var functionCalled = process.argv[2];
 var moment = require('moment');
-
+var songInput = '';
 
 function concertSearch() {
     var concertTitle = require("./concertFunct");
@@ -53,13 +54,10 @@ function movieSearch() {
 function doWhatItSays() {
     fs.readFile('random.txt', 'utf8', (err, data) => {
         if (err) throw (err);
-        console.log(data);
-        var dataInput = data;
-        var DWIS = dataInput.split(',');
-        // console.log(DWIS[1]);
-        var songInput = DWIS[1];
+        var DWIS = data.split(',');
+        songInput = (DWIS[1]);
         console.log(songInput);
-
+        spotifySearch(songInput);
     })
 };
 
@@ -67,8 +65,7 @@ function spotifySearch() {
     var Spotify = require('node-spotify-api');
     var keys = require("./keys");
     var spotify = new Spotify(keys.spotify);
-    var songInput = '';
-    doWhatItSays()
+    // var songInput = '';
 
     if (process.argv.length > 3) {
         var songName = [];
@@ -80,7 +77,7 @@ function spotifySearch() {
 
     } else {
         songInput = 'The Sign';
-        console.log("SI", songInput);
+        console.log(songInput);
     }
 
     spotify.search({ type: 'track', query: songInput, limit: 7 }, function (err, data) {
