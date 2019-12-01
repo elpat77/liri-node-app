@@ -52,14 +52,14 @@ function movieSearch() {
 
 function doWhatItSays() {
     fs.readFile('random.txt', 'utf8', (err, data) => {
+        if (err) throw (err);
         console.log(data);
         var dataInput = data;
         var DWIS = dataInput.split(',');
-        console.log(DWIS);
+        // console.log(DWIS[1]);
+        var songInput = DWIS[1];
+        console.log(songInput);
 
-        if (err) {
-            return console.log(error);
-        }
     })
 };
 
@@ -68,6 +68,7 @@ function spotifySearch() {
     var keys = require("./keys");
     var spotify = new Spotify(keys.spotify);
     var songInput = '';
+    doWhatItSays()
 
     if (process.argv.length > 3) {
         var songName = [];
