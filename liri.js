@@ -57,7 +57,7 @@ function doWhatItSays() {
         var DWIS = data.split(',');
         songInput = (DWIS[1]);
         console.log(songInput);
-        spotifySearch(songInput);
+        spotifySearch();
     })
 };
 
@@ -75,7 +75,7 @@ function spotifySearch() {
         songInput = (songName.join('+'));
         // console.log(songInput);
 
-    } else {
+    } else if (!songInput) {
         songInput = 'The Sign';
         console.log(songInput);
     }
