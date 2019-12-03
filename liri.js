@@ -56,7 +56,6 @@ function doWhatItSays() {
         if (err) throw (err);
         var DWIS = data.split(',');
         songInput = (DWIS[1]);
-        console.log(songInput);
         spotifySearch();
     })
 };
@@ -65,7 +64,6 @@ function spotifySearch() {
     var Spotify = require('node-spotify-api');
     var keys = require("./keys");
     var spotify = new Spotify(keys.spotify);
-    // var songInput = '';
 
     if (process.argv.length > 3) {
         var songName = [];
@@ -73,11 +71,9 @@ function spotifySearch() {
             songName.push(process.argv[i])
         }
         songInput = (songName.join('+'));
-        // console.log(songInput);
 
     } else if (!songInput) {
         songInput = 'The Sign';
-        console.log(songInput);
     }
 
     spotify.search({ type: 'track', query: songInput, limit: 7 }, function (err, data) {
